@@ -10,6 +10,9 @@ describe("convertPartToPercent", () => {
   });
 
   describe("Проверка с некорректными данными в массиве", () => {
+    it("negative number", () => {
+      expect(() => convertPartToPercent(["-1", "1", "2"])).toThrow("The array contains unexpected data");
+    });
     it("object", () => {
       expect(() => convertPartToPercent([{}, "1", "2"])).toThrow("The array contains unexpected data");
     });
